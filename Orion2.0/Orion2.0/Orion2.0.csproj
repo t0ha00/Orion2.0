@@ -7,4 +7,14 @@
     <UseWindowsForms>true</UseWindowsForms>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="OlimpRestClient">
+      <HintPath>C:\Users\parkh\Desktop\OlimpRestClient.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>
