@@ -80,7 +80,7 @@ namespace Orion2._0
             var httpClient = new HttpClient();
             var encryptor = new OlimpEncryptor();
             var authProvider = new AdminAuthProvider(httpClient, encryptor);
-            var cookie = authProvider.LogIn("http://192.168.100.7:9001", "teacher", "123");
+            var cookie = authProvider.LogIn("http://192.168.100.7", "teacher", "123");
 
 
             foreach (DataRow Row in Ds.Tables["Состав_группы"].Rows)
