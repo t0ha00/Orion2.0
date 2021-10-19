@@ -26,3 +26,4 @@ D:\Projects\Orion2.0\Orion2.0\Orion2.0\bin\Debug\net5.0-windows\runtimes\win\lib
 D:\Projects\Orion2.0\Orion2.0\Orion2.0\bin\Debug\net5.0-windows\OlimpRestClient.dll
 D:\Projects\Orion2.0\Orion2.0\Orion2.0\obj\Debug\net5.0-windows\Orion2._0.AuthorizationForm.resources
 D:\Projects\Orion2.0\Orion2.0\Orion2.0\obj\Debug\net5.0-windows\Orion2._0.Properties.Resources.resources
+D:\Projects\Orion2.0\Orion2.0\Orion2.0\obj\Debug\net5.0-windows\Orion2._0.MainMenu.resources

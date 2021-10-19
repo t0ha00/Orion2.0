@@ -15,8 +15,10 @@ namespace Orion2._0
     public partial class AuthorizationForm : Form
     {
         private string selectedState = null;
+        private string filialID = null;
         private SqlConnection sqlConnection = null;
         private DataSet Ds = new DataSet();
+        private DataSet Ds2 = new DataSet();
         public AuthorizationForm()
         {
             InitializeComponent();
@@ -36,14 +38,14 @@ namespace Orion2._0
             else
             {
                 SqlDataAdapter dataAdapter2 = new SqlDataAdapter(
-                    "SELECT ФИО, Пароль FROM Сотрудники",
+                    "SELECT Имя, Код FROM Филиалы ORDER BY Имя",
                     sqlConnection);
                 
-                dataAdapter2.Fill(Ds, "Сотрудники");
+                dataAdapter2.Fill(Ds2, "Филиалы");
 
-                foreach (DataRow Row in Ds.Tables["Сотрудники"].Rows)
+                foreach (DataRow Row in Ds2.Tables["Филиалы"].Rows)
                 {
-                    comboBoxLogin.Items.Add(Row["ФИО"].ToString());
+                    comboBoxPlace.Items.Add(Row["Имя"].ToString());
                 }
             }
 
@@ -52,7 +54,14 @@ namespace Orion2._0
 
         void comboBoxLogin_SelectedIndexChanged(object sender, EventArgs e)
         {
-            selectedState = comboBoxLogin.SelectedItem.ToString();
+            if (filialID == null)
+            {
+                MessageBox.Show("Сначала выберите Филиал!");
+            }
+            else
+            { 
+                selectedState = comboBoxLogin.SelectedItem.ToString();
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -65,10 +74,11 @@ namespace Orion2._0
                     {
                         if(textBoxPass.Text.ToString() == row["Пароль"].ToString())
                         {
+                            DataBank.UserFIO = row["ФИО"].ToString();
                             sqlConnection.Close();
                             this.Hide();
-                            Form1 form1 = new Form1();
-                            form1.Show();
+                            MainMenu mainMenu = new MainMenu();
+                            mainMenu.Show();
                         }
                         else
                         {
@@ -80,6 +90,42 @@ namespace Orion2._0
             else
             {
                 MessageBox.Show("Поле не может быть пустым!");
+            }
+        }
+
+        private void comboBoxPlace_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            foreach (DataRow Row in Ds2.Tables["Филиалы"].Rows)
+            {
+                if (Row["Имя"].ToString() == comboBoxPlace.SelectedItem.ToString())
+                {
+                    filialID = Row["Код"].ToString();
+                }
+
+            }
+
+            //Очищение списка
+            Ds.Clear();
+            comboBoxLogin.Items.Clear();
+            comboBoxLogin.ResetText();
+
+            SqlDataAdapter dataAdapter2 = new SqlDataAdapter(
+                    "SELECT ФИО, Пароль FROM Сотрудники WHERE Код_филиала =" + filialID + " ORDER BY ФИО",
+                    sqlConnection);
+            dataAdapter2.Fill(Ds, "Сотрудники");
+            
+            foreach (DataRow Row in Ds.Tables["Сотрудники"].Rows)
+            {
+                comboBoxLogin.Items.Add(Row["ФИО"].ToString());
+            }
+        }
+
+        private void comboBoxLogin_Click(object sender, EventArgs e)
+        {
+            if (filialID == null)
+            {
+                MessageBox.Show("Сначала выберите Филиал!");
             }
         }
     }
