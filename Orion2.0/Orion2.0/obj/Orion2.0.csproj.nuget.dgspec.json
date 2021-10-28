@@ -10,14 +10,14 @@
         "projectUniqueName": "D:\\Projects\\Orion2.0\\Orion2.0\\Orion2.0\\Orion2.0.csproj",
         "projectName": "Orion2.0",
         "projectPath": "D:\\Projects\\Orion2.0\\Orion2.0\\Orion2.0\\Orion2.0.csproj",
-        "packagesPath": "C:\\Users\\parkh\\.nuget\\packages\\",
+        "packagesPath": "C:\\Users\\Anton\\.nuget\\packages\\",
         "outputPath": "D:\\Projects\\Orion2.0\\Orion2.0\\Orion2.0\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "D:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\parkh\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Anton\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
