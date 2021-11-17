@@ -31,6 +31,7 @@ namespace Orion2._0
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AuthorizationForm));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.picSQLstatus = new System.Windows.Forms.PictureBox();
             this.comboBoxPlace = new System.Windows.Forms.ComboBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
@@ -40,6 +41,7 @@ namespace Orion2._0
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picSQLstatus)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -49,6 +51,7 @@ namespace Orion2._0
             // 
             this.panel1.AutoSize = true;
             this.panel1.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.panel1.Controls.Add(this.picSQLstatus);
             this.panel1.Controls.Add(this.comboBoxPlace);
             this.panel1.Controls.Add(this.pictureBox3);
             this.panel1.Controls.Add(this.button1);
@@ -64,6 +67,16 @@ namespace Orion2._0
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(353, 388);
             this.panel1.TabIndex = 0;
+            // 
+            // picSQLstatus
+            // 
+            this.picSQLstatus.Image = ((System.Drawing.Image)(resources.GetObject("picSQLstatus.Image")));
+            this.picSQLstatus.Location = new System.Drawing.Point(283, 21);
+            this.picSQLstatus.Name = "picSQLstatus";
+            this.picSQLstatus.Size = new System.Drawing.Size(54, 50);
+            this.picSQLstatus.TabIndex = 9;
+            this.picSQLstatus.TabStop = false;
+            this.picSQLstatus.Visible = false;
             // 
             // comboBoxPlace
             // 
@@ -136,7 +149,7 @@ namespace Orion2._0
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.Font = new System.Drawing.Font("Cambria", 28F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(47, 25);
+            this.label1.Location = new System.Drawing.Point(12, 18);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(265, 53);
             this.label1.TabIndex = 0;
@@ -155,6 +168,7 @@ namespace Orion2._0
             this.Load += new System.EventHandler(this.AuthorizationForm_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picSQLstatus)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -174,5 +188,6 @@ namespace Orion2._0
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ComboBox comboBoxPlace;
         private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox picSQLstatus;
     }
 }

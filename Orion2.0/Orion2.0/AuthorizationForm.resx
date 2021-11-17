@@ -58,10 +58,27 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="picSQLstatus.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAAplJREFUaEPt
+        ls9rE0EUx4Oi/1D/g3bNbgKa+iPGHIL+B4K1WHrQiCBWPXgQQQ/ubtpUrRZExJbWk6nYi5WIotbqoUWx
+        VQ/Su+O85CXdXd5kt7PdWQvzhQ+EzeTNZ5aZycvo6Ojo6CSatwsb+WZjfa25sM6Uwufkc+dQQz6pyHf5
+        sYoa8qELqwM15EMVVQlqyIcqqhLUkA9VVCWoIR+qqEpQQz5UUZWghnx2/TUKfyZQiJ4gSficjQ0LNXR2
+        b3QvFAvdC+kFxAY15EMVVQlqyIcqqhLUkA9VVCWoIR/dC0VgqfGdubNP2PCjC6w8eYrl3EPMqh38m68V
+        1gzHnOQcL04V96PS/xUud3TAsb4MOCYLYcWwrSP4s/TD3+heLnU9IBmK4VjXqtXqHiwTnqR6oUuPb5CC
+        ERlDvfAkIT8++5SS2h52dhAVe4cSiAMc2FK9QksJyNby7PKLi+yAm/M+/xrpYFMScYDbxiMRCsg/fG+z
+        ld+LrN68wwzX6n7Xb1tF1BSHkojD2enzPsFetOTfteU7jD4f9oyxJlBTHEoiDqX6SY9Am8p0hZ2ZOe17
+        RsnfXboJt9DWONf8iJriUBJxyLsFn2h5qsxef5tny79esZH5odYz77bp4Ly55ds+yCZqikNJxCG4gJnl
+        +13JTz9fsnNzQ+Fvfos/qCnOTl+jJwJbqPigxBZXn/mEvQjefIt+x/yAmuLsdC8E/U5QRLSIXvJtsuOo
+        qS7QmFEywUWEy3Pc7DEsqy59t/v28UV8poQ6i4gkzxvA1DpU6CppKZMV7h0WHVgfhmsWsFw6ga6SEouC
+        YZtXsEx6gZaY7+GrlGAIY9tqp5MOdJWiM+EFxqS+bUSBgw2NGfQ2cLdz4U2g/dmagNsGxuBwTzKZf7Gq
+        cyJmUpdHAAAAAElFTkSuQmCC
+</value>
+  </data>
   <data name="pictureBox3.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAACA
-        zQAAgM0BUGRDvwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAFtGSURBVHhe7d13
+        yQAAgMkBr5nErQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAFtGSURBVHhe7d13
         nDRF9TXwJeeck6Cg5CggQUUEA1EykkwIogQRiWJAUBAkR0FUQKKCgAiSBQkSRQURQQRJEkVAkun3nou9
         vJfm7LMzXbd6unvO+Xy+f1DsU7d6urdndrq7auT//u//REREZMjQRhEREek22igiIiLdRhtFRESk22ij
         iIiIdBttFBERkW6jjSIiItJttFFERES6jTaKiIhIt9FGEWkfZGKYA5aDdWBz+Dh8BnaFvWE/+BYcCSfC

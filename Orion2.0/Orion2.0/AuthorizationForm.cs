@@ -27,29 +27,36 @@ namespace Orion2._0
         private void AuthorizationForm_Load(object sender, EventArgs e)
         {
             sqlConnection = new SqlConnection(ConfigurationManager.ConnectionStrings["OrionDB"].ConnectionString);
-
-            sqlConnection.Open();
-
-            if (sqlConnection.State != ConnectionState.Open)
-            {
-                MessageBox.Show("Не удалось подключится к Базе данных!");
-            }
-
-            else
-            {
+            try { 
+                sqlConnection.Open();
                 SqlDataAdapter dataAdapter2 = new SqlDataAdapter(
                     "SELECT Имя, Код FROM Филиалы ORDER BY Имя",
                     sqlConnection);
-                
+
                 dataAdapter2.Fill(Ds2, "Филиалы");
 
                 foreach (DataRow Row in Ds2.Tables["Филиалы"].Rows)
                 {
                     comboBoxPlace.Items.Add(Row["Имя"].ToString());
                 }
+
+                picSQLstatus.Visible = true;
+            }
+            catch
+            {
+                MessageBox.Show("Не удалось подключится к Базе данных!");
+                picSQLstatus.Image = System.Drawing.Image.FromFile("Inages/icons8-удалить-базу-данных-48.png");
+                picSQLstatus.Visible = true;
+                comboBoxLogin.Visible = false;
+                button1.Visible = false;
+                comboBoxPlace.Visible = false;
+                textBoxPass.Visible = false;
+                pictureBox1.Visible = false;
+                pictureBox2.Visible = false;
+                pictureBox3.Visible = false;
+                throw;
             }
 
-            
         }
 
         void comboBoxLogin_SelectedIndexChanged(object sender, EventArgs e)

@@ -12,7 +12,6 @@ D:\Projects\Orion2.0\Orion2.0\Orion2.0\bin\Release\net5.0-windows\runtimes\win-x
 D:\Projects\Orion2.0\Orion2.0\Orion2.0\bin\Release\net5.0-windows\runtimes\win-x86\native\sni.dll
 D:\Projects\Orion2.0\Orion2.0\Orion2.0\bin\Release\net5.0-windows\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
 D:\Projects\Orion2.0\Orion2.0\Orion2.0\bin\Release\net5.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
-D:\Projects\Orion2.0\Orion2.0\Orion2.0\bin\Release\net5.0-windows\OlimpRestClient.dll
 D:\Projects\Orion2.0\Orion2.0\Orion2.0\obj\Release\net5.0-windows\Orion2.0.csproj.AssemblyReference.cache
 D:\Projects\Orion2.0\Orion2.0\Orion2.0\obj\Release\net5.0-windows\Orion2._0.AuthorizationForm.resources
 D:\Projects\Orion2.0\Orion2.0\Orion2.0\obj\Release\net5.0-windows\Orion2._0.Form1.resources
@@ -26,3 +25,5 @@ D:\Projects\Orion2.0\Orion2.0\Orion2.0\obj\Release\net5.0-windows\Orion2.0.dll
 D:\Projects\Orion2.0\Orion2.0\Orion2.0\obj\Release\net5.0-windows\ref\Orion2.0.dll
 D:\Projects\Orion2.0\Orion2.0\Orion2.0\obj\Release\net5.0-windows\Orion2.0.pdb
 D:\Projects\Orion2.0\Orion2.0\Orion2.0\obj\Release\net5.0-windows\Orion2.0.genruntimeconfig.cache
+D:\Projects\Orion2.0\Orion2.0\Orion2.0\obj\Release\net5.0-windows\Orion2._0.MainMenu.resources
+D:\Projects\Orion2.0\Orion2.0\Orion2.0\obj\Release\net5.0-windows\Orion2.0.csproj.CopyComplete

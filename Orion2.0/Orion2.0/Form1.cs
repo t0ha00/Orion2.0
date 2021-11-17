@@ -10,8 +10,6 @@ using System.Windows.Forms;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
-using OlimpRestClient;
-using OlimpRestClient.Security;
 
 namespace Orion2._0
 {
@@ -75,24 +73,9 @@ namespace Orion2._0
             }
         }
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-            var httpClient = new HttpClient();
-            var encryptor = new OlimpEncryptor();
-            var authProvider = new AdminAuthProvider(httpClient, encryptor);
-            var cookie = authProvider.LogIn("http://192.168.100.7", "teacher", "123");
 
-
-            foreach (DataRow Row in Ds.Tables["Состав_группы"].Rows)
-            {
-                MessageBox.Show(Row["ФИО"].ToString());
-                var entity = "Name=" + Row["ФИО"].ToString() + "&ProfilesList=Область аттестации Б.8.25#Областьаттестации Б.8.26";
-                //var response0 = httpClient.Post("http://192.168.100.7:9001", cookie, entity);
-
-                //response0.Close();
-            }
-
-        }
 
     }
+
+    
 }
