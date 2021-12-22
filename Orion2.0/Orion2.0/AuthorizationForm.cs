@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Net;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -9,16 +10,16 @@ using System.Threading.Tasks;
 using System.Configuration;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using Newtonsoft.Json;
 
 namespace Orion2._0
 {
     public partial class AuthorizationForm : Form
     {
         private string selectedState = null;
-        private string filialID = null;
-        private SqlConnection sqlConnection = null;
-        private DataSet Ds = new DataSet();
-        private DataSet Ds2 = new DataSet();
+        string filialID = null;
+        dynamic array_tp;
+        dynamic array_tp_names;
         public AuthorizationForm()
         {
             InitializeComponent();
@@ -26,26 +27,20 @@ namespace Orion2._0
 
         private void AuthorizationForm_Load(object sender, EventArgs e)
         {
-            sqlConnection = new SqlConnection(ConfigurationManager.ConnectionStrings["OrionDB"].ConnectionString);
-            try { 
-                sqlConnection.Open();
-                SqlDataAdapter dataAdapter2 = new SqlDataAdapter(
-                    "SELECT Имя, Код FROM Филиалы ORDER BY Имя",
-                    sqlConnection);
-
-                dataAdapter2.Fill(Ds2, "Филиалы");
-
-                foreach (DataRow Row in Ds2.Tables["Филиалы"].Rows)
+            bool server_status = false;
+            try {
+                using (var webClient = new WebClient())
                 {
-                    comboBoxPlace.Items.Add(Row["Имя"].ToString());
+                    if (webClient.DownloadString("http://localhost:5000/") == "OK")
+                    {
+                        server_status = true;
+                    }
                 }
-
-                picSQLstatus.Visible = true;
             }
             catch
             {
                 MessageBox.Show("Не удалось подключится к Базе данных!");
-                picSQLstatus.Image = System.Drawing.Image.FromFile("Inages/icons8-удалить-базу-данных-48.png");
+                //picSQLstatus.Image = System.Drawing.Image.FromFile("Inages/icons8-удалить-базу-данных-48.png");
                 picSQLstatus.Visible = true;
                 comboBoxLogin.Visible = false;
                 button1.Visible = false;
@@ -54,9 +49,20 @@ namespace Orion2._0
                 pictureBox1.Visible = false;
                 pictureBox2.Visible = false;
                 pictureBox3.Visible = false;
-                throw;
             }
-
+            
+            if (server_status) {
+                using (var webClient = new WebClient())
+                {
+                    var json_tp = webClient.DownloadString("http://localhost:5000/get_tp");
+                    array_tp = JsonConvert.DeserializeObject(json_tp);
+                    foreach (var item in array_tp)
+                    {
+                        comboBoxPlace.Items.Add(item.NAME.ToString());
+                    }
+                    picSQLstatus.Visible = true;
+                }
+            }
         }
 
         void comboBoxLogin_SelectedIndexChanged(object sender, EventArgs e)
@@ -75,14 +81,13 @@ namespace Orion2._0
         {
             if (selectedState != null && textBoxPass.Text != "")
             {
-                foreach (DataRow row in Ds.Tables["Сотрудники"].Rows)
+                foreach (var item in array_tp_names)
                 {
-                    if (row["ФИО"].ToString() == selectedState)
+                    if (item.FIO.ToString() == selectedState)
                     {
-                        if(textBoxPass.Text.ToString() == row["Пароль"].ToString())
+                        if(textBoxPass.Text.ToString() == item.PASS.ToString())
                         {
-                            DataBank.UserFIO = row["ФИО"].ToString();
-                            sqlConnection.Close();
+                            DataBank.UserFIO = item.FIO.ToString();
                             this.Hide();
                             MainMenu mainMenu = new MainMenu();
                             mainMenu.Show();
@@ -103,29 +108,35 @@ namespace Orion2._0
         private void comboBoxPlace_SelectedIndexChanged(object sender, EventArgs e)
         {
 
-            foreach (DataRow Row in Ds2.Tables["Филиалы"].Rows)
+            foreach (var item in array_tp)
             {
-                if (Row["Имя"].ToString() == comboBoxPlace.SelectedItem.ToString())
+                if (item.NAME.ToString() == comboBoxPlace.SelectedItem)
                 {
-                    filialID = Row["Код"].ToString();
+                    filialID = item.CODE.ToString();
                 }
-
             }
 
             //Очищение списка
-            Ds.Clear();
             comboBoxLogin.Items.Clear();
             comboBoxLogin.ResetText();
+            _ = get_Names();
 
-            SqlDataAdapter dataAdapter2 = new SqlDataAdapter(
-                    "SELECT ФИО, Пароль FROM Сотрудники WHERE Код_филиала =" + filialID + " ORDER BY ФИО",
-                    sqlConnection);
-            dataAdapter2.Fill(Ds, "Сотрудники");
-            
-            foreach (DataRow Row in Ds.Tables["Сотрудники"].Rows)
-            {
-                comboBoxLogin.Items.Add(Row["ФИО"].ToString());
+            async Task get_Names() {
+                picSQLstatus.Image = Properties.Resources.Iphone_spinner_2;
+                
+                using (WebClient webClient = new WebClient())
+                {
+                    string req_str = "http://localhost:5000/get_tp_names/" + filialID;
+                    var json_tp_name = await webClient.DownloadStringTaskAsync(req_str);
+                    array_tp_names = JsonConvert.DeserializeObject(json_tp_name);
+                    foreach (var item in array_tp_names)
+                    {
+                        comboBoxLogin.Items.Add(item.FIO.ToString());
+                    }
+                }
+                picSQLstatus.Image = Properties.Resources.free_icon_avatar_126491;
             }
+            
         }
 
         private void comboBoxLogin_Click(object sender, EventArgs e)
@@ -133,6 +144,14 @@ namespace Orion2._0
             if (filialID == null)
             {
                 MessageBox.Show("Сначала выберите Филиал!");
+            }
+        }
+
+        private void textBoxPass_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+            {
+                button1_Click(sender, e);
             }
         }
     }

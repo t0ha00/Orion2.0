@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "+mUnn9pjPOjO1ENODOSNnfkyEOJcEtt0YnSuKDXedPTga5DXK/04q3+vKSZK04DHN7r5+TG+/h/e7YCiWHyjsg==",
+  "dgSpecHash": "fqEN4RA301ZB0g1gyWiI7PxT7OdV7wUOGci30cJt94XFlv7iSzrj5YwolFHjRasQH0b9NOgeKOjlGQNqDWKIFg==",
   "success": true,
   "projectFilePath": "D:\\Projects\\Orion2.0\\Orion2.0\\Orion2.0\\Orion2.0.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Anton\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\Anton\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
+    "C:\\Users\\Anton\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
     "C:\\Users\\Anton\\.nuget\\packages\\runtime.native.system.data.sqlclient.sni\\4.7.0\\runtime.native.system.data.sqlclient.sni.4.7.0.nupkg.sha512",
     "C:\\Users\\Anton\\.nuget\\packages\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
     "C:\\Users\\Anton\\.nuget\\packages\\runtime.win-x64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-x64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",

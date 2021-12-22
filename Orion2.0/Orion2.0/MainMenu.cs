@@ -28,9 +28,14 @@ namespace Orion2._0
 
         private void оформлениеГруппToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            оформлениеГруппToolStripMenuItem.Enabled = false;
             MakeGroupForm makeGroupForm = new MakeGroupForm();
             makeGroupForm.MdiParent = this;
             makeGroupForm.Show();
+        }
+        public void ChangeVisibility()
+        {
+            оформлениеГруппToolStripMenuItem.Enabled = true;
         }
 
     }

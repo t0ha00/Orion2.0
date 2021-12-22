@@ -28,3 +28,4 @@ D:\Projects\Orion2.0\Orion2.0\Orion2.0\obj\Debug\net5.0-windows\Orion2._0.Proper
 D:\Projects\Orion2.0\Orion2.0\Orion2.0\obj\Debug\net5.0-windows\Orion2._0.MainMenu.resources
 D:\Projects\Orion2.0\Orion2.0\Orion2.0\obj\Debug\net5.0-windows\Orion2.0.csproj.CopyComplete
 D:\Projects\Orion2.0\Orion2.0\Orion2.0\obj\Debug\net5.0-windows\Orion2._0.MakeGroupForm.resources
+D:\Projects\Orion2.0\Orion2.0\Orion2.0\bin\Debug\net5.0-windows\Newtonsoft.Json.dll

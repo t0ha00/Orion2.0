@@ -29,16 +29,20 @@ namespace Orion2._0
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MakeGroupForm));
             this.tableLayoutPanelMain = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.labelPod = new System.Windows.Forms.Label();
             this.comboBoxPod = new System.Windows.Forms.ComboBox();
             this.checkBoxOtv = new System.Windows.Forms.CheckBox();
             this.dataGridViewOtv = new System.Windows.Forms.DataGridView();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.openedGrBtn = new System.Windows.Forms.Button();
+            this.closedGrBtn = new System.Windows.Forms.Button();
+            this.createGrBtn = new System.Windows.Forms.Button();
             this.tableLayoutPanelMain.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOtv)).BeginInit();
+            this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanelMain
@@ -57,12 +61,15 @@ namespace Orion2._0
             // 
             // tableLayoutPanel1
             // 
+            this.tableLayoutPanel1.AutoSize = true;
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Controls.Add(this.labelPod, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.comboBoxPod, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.checkBoxOtv, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.dataGridViewOtv, 0, 3);
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 5);
+            this.tableLayoutPanel1.Controls.Add(this.createGrBtn, 0, 6);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -72,8 +79,8 @@ namespace Orion2._0
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 120F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
@@ -136,6 +143,53 @@ namespace Orion2._0
             this.dataGridViewOtv.Size = new System.Drawing.Size(200, 150);
             this.dataGridViewOtv.TabIndex = 3;
             // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.AutoSize = true;
+            this.tableLayoutPanel2.ColumnCount = 2;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.Controls.Add(this.openedGrBtn, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.closedGrBtn, 1, 0);
+            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 260);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 1;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(200, 29);
+            this.tableLayoutPanel2.TabIndex = 4;
+            // 
+            // openedGrBtn
+            // 
+            this.openedGrBtn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.openedGrBtn.Location = new System.Drawing.Point(3, 3);
+            this.openedGrBtn.Name = "openedGrBtn";
+            this.openedGrBtn.Size = new System.Drawing.Size(94, 23);
+            this.openedGrBtn.TabIndex = 0;
+            this.openedGrBtn.Text = "Открытые";
+            this.openedGrBtn.UseVisualStyleBackColor = true;
+            this.openedGrBtn.Click += new System.EventHandler(this.openedGrBtn_Click_1);
+            // 
+            // closedGrBtn
+            // 
+            this.closedGrBtn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.closedGrBtn.Location = new System.Drawing.Point(103, 3);
+            this.closedGrBtn.Name = "closedGrBtn";
+            this.closedGrBtn.Size = new System.Drawing.Size(94, 23);
+            this.closedGrBtn.TabIndex = 1;
+            this.closedGrBtn.Text = "Закрытые";
+            this.closedGrBtn.UseVisualStyleBackColor = true;
+            // 
+            // createGrBtn
+            // 
+            this.createGrBtn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.createGrBtn.Location = new System.Drawing.Point(3, 295);
+            this.createGrBtn.Name = "createGrBtn";
+            this.createGrBtn.Size = new System.Drawing.Size(200, 23);
+            this.createGrBtn.TabIndex = 5;
+            this.createGrBtn.Text = "Создать новую группу";
+            this.createGrBtn.UseVisualStyleBackColor = true;
+            // 
             // MakeGroupForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -143,14 +197,15 @@ namespace Orion2._0
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ClientSize = new System.Drawing.Size(1062, 612);
             this.Controls.Add(this.tableLayoutPanelMain);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MakeGroupForm";
             this.Text = "Группы";
             this.Load += new System.EventHandler(this.MakeGroupForm_Load);
             this.tableLayoutPanelMain.ResumeLayout(false);
+            this.tableLayoutPanelMain.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOtv)).EndInit();
+            this.tableLayoutPanel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -163,5 +218,9 @@ namespace Orion2._0
         private System.Windows.Forms.ComboBox comboBoxPod;
         private System.Windows.Forms.CheckBox checkBoxOtv;
         private System.Windows.Forms.DataGridView dataGridViewOtv;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.Button openedGrBtn;
+        private System.Windows.Forms.Button closedGrBtn;
+        private System.Windows.Forms.Button createGrBtn;
     }
 }

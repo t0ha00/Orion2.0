@@ -70,10 +70,10 @@ namespace Orion2._0
             // 
             // picSQLstatus
             // 
-            this.picSQLstatus.Image = ((System.Drawing.Image)(resources.GetObject("picSQLstatus.Image")));
             this.picSQLstatus.Location = new System.Drawing.Point(283, 21);
             this.picSQLstatus.Name = "picSQLstatus";
             this.picSQLstatus.Size = new System.Drawing.Size(54, 50);
+            this.picSQLstatus.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picSQLstatus.TabIndex = 9;
             this.picSQLstatus.TabStop = false;
             this.picSQLstatus.Visible = false;
@@ -114,6 +114,7 @@ namespace Orion2._0
             this.textBoxPass.Size = new System.Drawing.Size(252, 23);
             this.textBoxPass.TabIndex = 5;
             this.textBoxPass.UseSystemPasswordChar = true;
+            this.textBoxPass.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxPass_KeyPress);
             // 
             // pictureBox2
             // 
